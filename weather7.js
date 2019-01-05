@@ -11,15 +11,21 @@ function getWeather(){
     var city1 = $("#city1").val();
     var city2 = $("#city2").val();
     var city3 = $("#city3").val();
+    var city4 = $("#city4").val();
+    var city5 = $("#city5").val();
+    var city6 = $("#city6").val();
     
-    if(city != '' && city1 != ''&& city2 != ''&& city3 != ''){
+    
+    if(city != ''){
         
         $.ajax({
            //url: 'http://api.openweathermap.org/data/2.5/weather?q=' + city + "&units=metric" + "&APPID=c10bb3bd22f90d636baa008b1529ee25",
           //url: 'https://api.railwayapi.com/v2/pnr-status/pnr/'+city+'/apikey/zvxng1766l/',
           //curl "https://api.railwayapi.com/v2/live/train/12046/date/20-06-2017/apikey/myapikey/"
 
-url: 'https://api.railwayapi.com/v2/check-seat/train/'+city+'/source/'+city1+'/dest/'+city2+'/date/'+city3+'/pref/SL/quota/GN/apikey/q1mlppvcuf/',
+//url: 'https://api.railwayapi.com/v2/check-seat/train/'+city+'/source/'+city1+'/dest/'+city2+'/date/'+city3+'/pref/CC/quota/GN/apikey/q1mlppvcuf/',
+// url: 'https://api.railwayapi.com/v2/fare/train/'+city+'/source/'+city1+'/dest/'+city2+'/age/'+city3+'/pref/'+city4+'/quota/'+city5+'/date/'+city6+'/apikey/q1mlppvcuf/',
+   url:'https://api.railwayapi.com/v2/fare/train/'+city+'/source/'+city1+'/dest/'+city2+'/age/'+city3+'/pref/'+city4+'/quota/'+city5+'/date/'+city6+'/apikey/q1mlppvcuf/',
             type: "GET",
             dataType: "json",
             success: function(data){
@@ -45,25 +51,7 @@ url: 'https://api.railwayapi.com/v2/check-seat/train/'+city+'/source/'+city1+'/d
 
 function showResults(data)
 {   
-    var i,text="";
-    text+="<br>"
-    for (i = 0; i < data.train.classes.length; i++) 
-    { 
-    var d1 = data.train.classes[i].name;
-    var d2 = data.train.classes[i].code;
-    var d3 = data.train.classes[i].available;
-    if(d3=='N')
-        d3='NOT AVAILABLE';
-    else
-        d3='AVAILABLE';
-    
-    text += "<h5 style='padding-left:80px; padding-bottom:30px;'><strong>"+d1 +"</strong>: ------------"+d3;
-
-
-    } 
-
-    
-    return  text;
+    return "FARE FROM "+data.from_station.name+" to "+data.to_station.name+" is Rs "+data.fare+"";
 
 }
 

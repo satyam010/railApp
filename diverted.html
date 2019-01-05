@@ -15,22 +15,22 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>   
      
-<script src="weather3.js"></script>   
+<script src="weather1.js"></script>   
+
 <style type="text/css">
   body
   {
-    background: url('https://qph.fs.quoracdn.net/main-qimg-5d657471a16b5727a3f1f8348afb520c');
+    background: url('http://drashtanews.com/upload/news/tr.jpg');
     background-size: cover;
   }
 </style>
-
 </head>
 <body>
 <nav class="navbar navbar-default" id="nav_bar">
    <div class="container">
        <div class="navbar-header">
            <a href="index.html" class="navbar-brand navbar-link weather">
-               <img src="images/bg9.jpg" class="img-responsive" id="logo" alt="">
+               <img src="images/bg9.jpg" class="img-responsive" id="logo" alt=""><strong>Indian Railways</strong>
            </a>
            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol">
                <span class="sr-only">Toggle navigation</span>
@@ -46,7 +46,7 @@
               <li><a href="current1.html">Train Avaibility</a></li>
               <li><a href="current2.html">Train Route</a></li>
               <li><a href="current3.html">Seat Avaibility</a></li>
-              <li><a href="current7.html">Fare Enquiry</a></li>
+              <li><a href="current7.html">Fare</a></li>
               <li><a href="current8.html">Train bw Stations</a></li>
               
               <li class="nav-item dropdown">
@@ -54,9 +54,10 @@
         Train Status
       </a>
       <div class="dropdown-menu">
-       <a class="dropdown-item" href="current5.html">Live Status</a><br>
-        <a class="dropdown-item" href="current4.html">Cancelled Train</a><br>
-        <a class="dropdown-item" href="current6.html">Reschduled Train</a><br>
+        <a class="dropdown-item" href="live.html">Live Status</a><br>
+        <a class="dropdown-item" href="cancel.html">Cancelled Train</a><br>
+        <a class="dropdown-item" href="reschedule.html">Reschduled Train</a><br>
+        <a class="dropdown-item" href="diverted.html">Diverted Train</a><br>
     </div>
 </li>
 
@@ -69,21 +70,18 @@
 </nav> 
 
 
-<br>
+
 <div class="container" style="height:650px;">
     <div class="row" >
+        <div class="col-md-12" style="margin-bottom:10px;">
+            <h3 class="text-center text-primary">Diverted Train List</h3>
+            <span id="error" class="text-center"></span>
+        </div>
         
         <div class="row form-group form-inline" id="cityDiv">
            
-            <input type="text" name="city" id="city" class="form-control" placeholder="Train Number" >
-            <br><br>
-            <input type="text" name="city" id="city1" class="form-control" placeholder="Source Station" >
-            <br><br>
-            <input type="text" name="city" id="city2" class="form-control" placeholder="Destination Station" >
-            <br><br>
-            <input type="text" name="city" id="city3" class="form-control" placeholder="Date" >
-            <br><br>
-            <button id="submitCity" class="btn btn-primary">Check<br></button>
+            <input type="text" name="city" id="city" class="form-control" placeholder="dd-mm-yyyy" >
+            <button id="submitCity" class="btn btn-primary">Search </button>
         </div>
 
     </div>

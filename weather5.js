@@ -19,7 +19,9 @@ function getWeather(){
           //url: 'https://api.railwayapi.com/v2/pnr-status/pnr/'+city+'/apikey/zvxng1766l/',
           //curl "https://api.railwayapi.com/v2/live/train/12046/date/20-06-2017/apikey/myapikey/"
 
-url: 'https://api.railwayapi.com/v2/check-seat/train/'+city+'/source/'+city1+'/dest/'+city2+'/date/'+city3+'/pref/SL/quota/GN/apikey/q1mlppvcuf/',
+//url: 'https://api.railwayapi.com/v2/check-seat/train/'+city+'/source/'+city1+'/dest/'+city2+'/date/'+city3+'/pref/CC/quota/GN/apikey/ip5dtorqbr/',
+ url: 'https://api.railwayapi.com/v2/live/train/'+city+'/date/'+city1+'/apikey/q1mlppvcuf/',
+ 
             type: "GET",
             dataType: "json",
             success: function(data){
@@ -42,22 +44,19 @@ url: 'https://api.railwayapi.com/v2/check-seat/train/'+city+'/source/'+city1+'/d
 
 
 
-
 function showResults(data)
 {   
     var i,text="";
     text+="<br>"
-    for (i = 0; i < data.train.classes.length; i++) 
+    for (i = 0; i < data.route.length; i++) 
     { 
-    var d1 = data.train.classes[i].name;
-    var d2 = data.train.classes[i].code;
-    var d3 = data.train.classes[i].available;
-    if(d3=='N')
-        d3='NOT AVAILABLE';
-    else
-        d3='AVAILABLE';
+    var d1 = data.route[i].station.name;
+    var d2 = data.route[i].status;
+    var d3 = data.route[i].actarr;
+    var d4 = data.route[i].scharr;
     
-    text += "<h5 style='padding-left:80px; padding-bottom:30px;'><strong>"+d1 +"</strong>: ------------"+d3;
+
+    text += "<h5 style='padding-left:80px; padding-bottom:30px;'><strong>"+d1 +"</strong>:     "+d2+" Actual Arrival is "+d3+" Expected Arrival is "+d4  ;
 
 
     } 
@@ -66,12 +65,3 @@ function showResults(data)
     return  text;
 
 }
-
-
-
-
-
-
-
-
-

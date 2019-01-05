@@ -13,7 +13,7 @@ function getWeather(){
         
         $.ajax({
            //url: 'http://api.openweathermap.org/data/2.5/weather?q=' + city + "&units=metric" + "&APPID=c10bb3bd22f90d636baa008b1529ee25",
-          url: 'https://api.railwayapi.com/v2/pnr-status/pnr/'+city+'/apikey/q1mlppvcuf/',
+          url: 'https://api.railwayapi.com/v2/suggest-station/name/'+city+'/apikey/q1mlppvcuf/',
 
             type: "GET",
             dataType: "json",

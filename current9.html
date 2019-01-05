@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Rail App</title>
-    <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+     <title>Rail App</title>
+    
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    
     <link rel="stylesheet" href="style.css">
     
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>        
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
-    
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>   
+     
+<script src="weather9.js"></script>   
 
-
+<style type="text/css">
+  body
+  {
+    background: url('https://static.newsx.com/wp-content/uploads/2018/04/revised-Indian-Railway-Train-644x362.jpg');
+    background-size: cover;
+  }
+</style>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="nav_bar">
+<nav class="navbar navbar-default" id="nav_bar">
    <div class="container">
        <div class="navbar-header">
            <a href="index.html" class="navbar-brand navbar-link weather">
@@ -32,6 +38,7 @@
                <span class="icon-bar"></span>
            </button>
        </div>
+       
        <div class="collapse navbar-collapse" id="navcol">
           <ul class="nav navbar-nav navbar-right" id="nav_list">
               <li><a href="current.html">PNR Status</a></li>
@@ -40,6 +47,7 @@
               <li><a href="current3.html">Seat Avaibility</a></li>
               <li><a href="current7.html">Fare Enquiry</a></li>
               <li><a href="current8.html">Train bw Stations</a></li>
+              
               <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
         Train Status
@@ -52,47 +60,34 @@
 </li>
 
           </ul>
-      </div>
-  </div>
-</nav>
-<div class="row" id="headRow">
-    <div class="col-md-12" id="colText">
-        
-        <h6 class="text-center" id="colHeadText2"></h6>
-        
-        <ul class="list-inline" id="list_item">
-            <li id="list1"></li>
-            <li id="list2"></li>
-            <li id="list3"></li>
-            <li id="list4"></li>
+           
+       </div>
+       
+   </div>
+    
+</nav> 
 
-        </ul>
-    </div>
-</div>
 
-<div class="container" style="margin-bottom: 70px;">
-    <div class="row">
-        <div class="col-md-12">
-            <h2 class="text-center text-primary" style="margin-top:40px;">Welcome To Indian Railways</h2>
+
+<div class="container" style="height:650px;">
+    <div class="row" >
+        <div class="col-md-12" style="margin-bottom:10px;">
+            <h3 class="text-center text-primary  aa">Enter PNR Number</h3>
+            <span id="error" class="text-center"></span>
         </div>
+        
+        <div class="row form-group form-inline" id="cityDiv">
+           
+            <input type="text" name="city" id="city" class="form-control" placeholder="Enter PNR Number" >
+            <button id="submitCity" class="btn btn-primary">Search PNR</button>
+        </div>
+
     </div>
     
+    
+    <div id="showWeather"></div>
 </div>
 
-<div class="footer">
-    <div class="container">
-        <div class="row text-center" style="padding-top:30px;">
-            <p style="color:white">Copyright &copy; Indian Railways</p>
-        </div>
-    </div>
-</div>
  
-
-    
-
-               
 </body>
 </html>
-
-
-
